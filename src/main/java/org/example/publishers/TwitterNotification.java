@@ -8,15 +8,17 @@ public class TwitterNotification implements DomainEvent {
     private String sender;
     private String twitt;
     private String message;
+    private String channel;
 
-    public TwitterNotification(String sender,String twitt,String message){
+    public TwitterNotification(String sender,String twitt,String message,String channel){
         this.sender = sender;
         this.twitt = twitt;
         this.message = message;
+        this.channel = channel;
     }
 
-    public static TwitterNotification create(String sender,String twitt,String message){
-        return new TwitterNotification(sender,twitt,message);
+    public static TwitterNotification create(String sender,String twitt,String message,String channel){
+        return new TwitterNotification(sender,twitt,message,channel);
     }
 
     @Override
