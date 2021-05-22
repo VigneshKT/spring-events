@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class SpringEventConsumer implements DomainEvent {
 
     @EventListener
-    public void emailNotificationListerner(Email domainEvent){
+    public void emailNotificationListerner(DomainEvent domainEvent){
         System.out.println(domainEvent.toString());
     }
 
