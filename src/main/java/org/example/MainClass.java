@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MainClass implements CommandLineRunner {
 
-    
+
     private EmailNotification emailNotification;
 
     @Autowired
