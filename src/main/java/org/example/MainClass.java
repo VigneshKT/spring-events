@@ -9,8 +9,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MainClass implements CommandLineRunner {
 
-    @Autowired
+    
     private EmailNotification emailNotification;
+
+    @Autowired
+    public void setEmailNotification(EmailNotification emailNotification){
+        this.emailNotification = emailNotification;
+    }
 
     public static void main(String[] args){
         SpringApplication.run(MainClass.class,args);
