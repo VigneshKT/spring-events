@@ -2,6 +2,8 @@ package org.example.publishers;
 
 import org.example.events.DomainEvent;
 
+import java.util.Objects;
+
 public class TwitterNotification implements DomainEvent {
     private String sender;
     private String twitt;
@@ -24,5 +26,20 @@ public class TwitterNotification implements DomainEvent {
                 ", twitt='" + twitt + '\'' +
                 ", message='" + message + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TwitterNotification that = (TwitterNotification) o;
+        return Objects.equals(sender, that.sender) &&
+                Objects.equals(twitt, that.twitt) &&
+                Objects.equals(message, that.message);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sender, twitt, message);
     }
 }
