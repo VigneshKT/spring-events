@@ -17,6 +17,7 @@ public class EmailNotification {
 
     public void publishEmails(){
        Email email =  Email.create("Vignesh","Katravath","Hi bro");
+       System.out.println("Publishing an event");
        publisher.eventPublisher(email);
     }
 }
